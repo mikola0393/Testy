@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testreport Wyszukiwarka</title>
+<link type="text/css" rel="stylesheet" href="http://127.0.0.1:81/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width=231 height=56 src="http://127.0.0.1:81/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Plan Execution Report</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Booking.com<br/>Test Plan: Test - Plan Wyszukiwarka<br/>Test Suite: Wyszukiwarka</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 02/26/2024</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="doclevel" style="page-break-before: avoid;"  >Test Plan: Test - Plan Wyszukiwarka</h1>
+<div class="txtlevel"><h2><strong>1.Wstęp</strong></h2>
+
+<p>Gl&oacute;wnym celem działań testowych jest dostarczenie interesariuszam informacji o jakości testowanego produktu.</p>
+
+<p>W przygotowanym dokumencie zostaly zebrane kluczowe informacji na temat działań testowych.Zostały wyszczeg&oacute;lnione wszystkie komponenty opragromowania,kt&oacute;re zostaną poddane weryfikacji, typy test&oacute;w jakie zostaną przeprowadzone.</p>
+
+<p>&nbsp;</p>
+
+<h2>2.Zakres Test&oacute;w</h2>
+
+<ul>
+	<li>
+	<h2><strong>Realizowane typy test&oacute;w:</strong></h2>
+	</li>
+	<li>Jednostkowe</li>
+	<li>Funkcionalne</li>
+	<li>Wydajnosciowe</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li>
+	<h2>Typy test&oacute;w,kt&oacute;re nie będą przeprowadzone</h2>
+	</li>
+	<li>
+	<p>Testy automatyczne - ze wzgledu nie ma wystarczającego budżetu na etap związany z testowaniem opragramowania&nbsp;&nbsp;&nbsp;</p>
+	</li>
+</ul>
+
+<h2>3.Przedmioty Test&oacute;w&nbsp;</h2>
+
+<p>Komponentem poddawanym testom jest wyszukiwarka ze strony gl&oacute;wnej Booking.com z uwzględnieniem całej logiki filtrowania po odpowiednich polach.</p>
+
+<p>&nbsp;</p>
+
+<h2><strong>4.Kyteria zaliczenia / nie zaliczenia&nbsp;</strong></h2>
+
+<ul>
+	<li>Wykonania zaproektowanych przypadk&oacute;w testowych&nbsp;</li>
+	<li>Czas odpowiedzi serwera nie przekracza 700ms</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><strong>5.Kryteria wejścia/wyjścia</strong></h2>
+
+<h2><strong>&nbsp; &nbsp; &nbsp; &nbsp; 1.Kryteria wejścia&nbsp;</strong></h2>
+
+<ul>
+	<li>
+	<p>Zakończona jest faza implementacji wyszukiwarki&nbsp;</p>
+	</li>
+	<li>
+	<p>Działające i skonfigurowane&nbsp;środowiśko testowe&nbsp;</p>
+	</li>
+	<li>
+	<p>Dostęp do dzłającej i&nbsp;skonfigurowanej maszyny wirtualnej&nbsp;</p>
+	</li>
+</ul>
+
+<h2><strong>&nbsp; &nbsp; &nbsp; 2.Kryteria wyjścia&nbsp;</strong></h2>
+
+<ul>
+	<li>Wszystkie przypadkie testowe zostale zakończone pomyślnie&nbsp;</li>
+	<li>Komponent spelnia wszustkie ustalone zalozenia z załączonej dokumentacji&nbsp;</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><strong>6.Lista wymagań / funkcionalności do przetestowania&nbsp;&nbsp;</strong></h2>
+
+<p>Załączenie wszystkich dokumentacji, user story, scenariuszy itp.</p>
+
+<p>&nbsp;</p>
+
+<h2><strong>7.Środowiśko testowe&nbsp;</strong></h2>
+
+<ul>
+	<li>Testowy serwer(Development)</li>
+	<li>System Windows 10 Home 64 bit</li>
+	<li>Przeglądarki biorące udziałw testach:Firefox, Edge,Google Chrome, Opera, Safari</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><strong>8.Homonogram test&oacute;w&nbsp;</strong></h2>
+
+<ol>
+	<li>Przeprowadzienie test&oacute;w funkcionalnych:</li>
+</ol>
+
+<ul>
+	<li>Weryfikacja funkcionalności w oparciu o user story - 3h</li>
+	<li>Wykonanie wczesniej zaproektoanych przypadk&oacute;w testowych - 1h</li>
+	<li>Weryfikacj warsrwy - backendowej&nbsp;</li>
+</ul>
+
+<p>2.Przeprowadzenie test&oacute;w wydajnościowych:</p>
+
+<ul>
+	<li>Weryfikacja ile wynosi sredni czas odpowiedzi&nbsp;</li>
+	<li>Weryfikacja jaka jest maksymalna ilośc requwist&oacute;w przy jakie wyszukiwarka działa stabilnie&nbsp;</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2>9.Raport z test&oacute;w&nbsp;</h2>
+
+<ul>
+	<li>Lista zrealizowanych przypadk&oacute;w testowych wraz ze statusami&nbsp;</li>
+	<li>Pomiary z test&oacute;w wydajnościowych&nbsp;</li>
+	<li>Inne raporty blęd&oacute;w&nbsp;</li>
+</ul>
+
+<h2>&nbsp;</h2>
+
+<h2>10.Lista narzędzi</h2>
+
+<ul>
+	<li>Jmeter</li>
+	<li>TestLink</li>
+	<li>Jira</li>
+	<li>Browserstack</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2>11.Zarządzanie incedentami / błędami&nbsp;</h2>
+
+<p>W procesie testowym każdy wykryty bląd powienien być odpowiednio zaraportowany do systemu Jira.</p>
+
+<p>Uwzględniając przy tym priorytet blędu, osobę przypisaną (developera), komponent kt&oacute;rego dotyczy problem&nbsp;</p>
+
+<p>Zgodnie z pzryjętnym flow przez naszą organizacje taki problem powinien zostać naprawiony pzrez developera i trafido retest&oacute;w.</p>
+
+<h2><br />
+12.Role&nbsp;i odpowiedziąłnośc</h2>
+
+<p>Adrian K.&nbsp;- Implementacja skrypt&oacute;w test&oacute;w automatycznych&nbsp;</p>
+
+<p>Mykola Chernenko - wykonywanie przypadk&oacute;w testowych&nbsp;</p>
+
+<p>Roman D.- projektowanie przypadk&oacute;w testowych&nbsp;<br />
+&nbsp;</p>
+
+<p>&nbsp;</p></div>
+ <br/><h1 class='doclevel'>Test Suite : Wyszukiwarka</h1>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="5">Test Case booking-2: Weryfikacja logiki wyszukiwarki&nbsp;<span style="font-size: 80%;">[Version : 1]</span></th></tr>
+<tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>Przechodzimy na stronę Booking.com</p>
+</td><td><p>Wyszukiwarka wczytala się pomyślnie&nbsp;</p>
+</td><td>Passed</td></tr><tr><td width="5">2</td><td><p>Klikamy w pole &quot; Dokąd się wiebierasz&quot;&nbsp;</p>
+</td><td><p>Pojawiają&nbsp;sie popularne miejsca w pobliżu</p>
+</td><td>Passed</td></tr><tr><td width="5">3</td><td><p>Wpisujemy w pole &quot; Dokąd się wiebierasz&quot; frazę Poznań.</p>
+</td><td><p>Na pierwszej pozycjii w podpowiedzi&nbsp; pojawia się lokalizacja &quot;Poznań&quot;</p>
+</td><td>Failed</td></tr><tr><td width="5">4</td><td><p>Klikamy&nbsp;w pole datowe&nbsp;</p>
+</td><td><p>Pojawia się Date Picker z dostępnym przydziałem</p>
+</td><td>Passed</td></tr><tr><td width="5">5</td><td><p>Wybiramy dostępny zakrez z&nbsp; &nbsp;date pickera&#39;a&nbsp;</p>
+</td><td><p>Zakrez zostal poprawnie wprowadzony do pola datowego&nbsp;</p>
+</td><td>Passed</td></tr><tr><td width="5">6</td><td><p>Klikamy w pole &quot;ilość os&oacute;b&quot;</p>
+</td><td><ul>
+	<li>pojawił się popup z możliwoścą wyboru:</li>
+</ul>
+
+<ol>
+	<li>Liczby dzieci&nbsp;</li>
+	<li>Liczby doroslych&nbsp;</li>
+	<li>Liczby pokoj&oacute;w&nbsp;</li>
+</ol>
+
+<p>&nbsp;</p>
+</td><td>Passed</td></tr><tr><td width="5">7</td><td><p>Inkrementujemy wartość &quot;Ilość dzieci&quot;</p>
+</td><td><p>Pojawiło się dodatkowe pole &quot;Wymagany wiek&quot;</p>
+</td><td>Passed</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="4">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="4"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="4">Medium</td></tr>
+<tr><td colspan="5"></td></tr><tr style="font-weight: bold;background: #EEE;text-align: left;"><td width="20%" valign="top">Execution Details</td><td colspan="4">&nbsp;</td></tr>
+<tr><td width="20%" valign="top">Build</td><td colspan="4">Ver. 0.0.9</td></tr>
+<tr><td width="20%" valign="top">Tester</td><td  colspan="4" >mikola0393</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Execution Result:</span></td><td  colspan="4" ><b>Failed</b></td></tr>
+<tr><td width="20%"><span class="label">Execution Mode:</span></td><td  colspan="4" ><b>Manual</b></td></tr>
+<tr><td width="20%"><span class="label">Execution duration (min):</span></td><td  colspan="4" ><b>20.00</b></td></tr>
+</table>
+</div>
+
+</body>
+</html>
