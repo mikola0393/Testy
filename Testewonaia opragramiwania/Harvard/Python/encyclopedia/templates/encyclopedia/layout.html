@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Wiki{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 15px;
+        }
+        .header {
+            margin-bottom: 35px;
+            overflow: hidden; 
+        }
+        .header a {
+            text-decoration: none; 
+            margin-right: 10px; 
+            color: #333; 
+        }
+        .search-container {
+            position: relative;
+            width: 250px; 
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 40px; 
+            border: 1px solid #ccc; 
+            border-radius: 20px; 
+            box-sizing: border-box;
+        }
+        
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            width: 25px; 
+            height: 25px; 
+        }
+        
+        .search-form input[type="submit"] {
+            background-color: #3498db; 
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px; 
+            float: right; 
+            margin-top: 10px; 
+        }
+        
+        .content {
+            padding: 30px;
+            border: 1px solid #ccc;
+        }
+        .main-heading {
+            text-align: right; 
+            font-size: -13px; 
+            margin-bottom: -10px; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'create' %}">NewPage</a>
+        <a href="{% url 'random_page' %}">RandomPage</a>
+        <form action="{% url 'search' %}" method="get" class="search-form" style="float: right ;">
+            {% load static %}
+            <div class="search-container">
+                <img src="{% static 'encyclopedia/lupa.avif' %}" alt="Szukaj" class="search-icon">
+                <input type="text" name="q" placeholder="Search" class="search-input">
+            </div>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <div class="content">
+        <h1 class="main-heading">{% block main_heading %}{% endblock %}</h1>
+        {% block body %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

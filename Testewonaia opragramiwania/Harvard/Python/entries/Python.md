@@ -1,0 +1,1 @@
+Python is a programming language that can be used both for writing **command-line scripts** or building **web applications**.Python is dynamically typed and garbage-collected.Python is a versatile and popular programming language used for creating various applications, from simple scripts to advanced systems.

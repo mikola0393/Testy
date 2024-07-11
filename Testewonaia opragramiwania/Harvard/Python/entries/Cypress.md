@@ -1,0 +1,1 @@
+Cypress is a frontend test automation tool for regression testing of web applications. Cypress runs on Windows, Linux, and macOS. Cypress app is open-source software released under the MIT License, while the Cypress Cloud is a web application. Cypress has been compared to Selenium.
