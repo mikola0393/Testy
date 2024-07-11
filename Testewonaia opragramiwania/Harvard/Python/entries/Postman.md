@@ -1,1 +1,0 @@
-Postman is a popular API development tool that simplifies the process of creating, testing, and managing APIs.
