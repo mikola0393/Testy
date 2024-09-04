@@ -1,0 +1,22 @@
+{% extends "auctions/base.html" %}
+
+{% load currency %}
+
+{% block body %}
+    <h2>Your Watchlist ({{ watchlist_count }} auctions)</h2>
+    <ul>
+        {% for listing in listings %}
+            <li>
+                <a href="{% url 'listing' listing.id %}">{{ listing.title }}</a>
+                <p>Price: {{ listing.current_price|currency }}</p>
+                <p>Created: {{ listing.created_at|date:"M d, Y H:i" }}</p>
+                {% if listing.image %}
+                    <img src="{{ listing.image.url }}" alt="{{ listing.title }}" style="width:100px;">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if not listings %}
+        <p>Your watchlist is currently empty.</p>
+    {% endif %}
+{% endblock %}

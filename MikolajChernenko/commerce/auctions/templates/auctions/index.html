@@ -1,0 +1,28 @@
+{% extends "auctions/base.html" %}
+{% load currency %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    <ul>
+        {% for listing in listings %}
+            <li>
+                <div class="listing-container">
+                    
+                    <a href="{% url 'listing' listing.id %}">{{ listing.title }}</a> <br>
+                    
+                    <span style="color:black;">Price: {{ listing.current_price|currency }}</span> <br>
+                    
+                    <span style="color:black;">Created: {{ listing.created_at|date:"M d, Y H:i" }}</span>
+                    
+                    {% if listing.image %}
+                        <br>
+                        <a href="{% url 'listing' listing.id %}"><img src="{{ listing.image.url }}" alt="{{ listing.title }}" class="listing-image"></a>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if not listings %}
+        <p>No active listings available.</p>
+    {% endif %}
+{% endblock %}

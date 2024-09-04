@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Active Listings</title>
+</head>
+<body>
+    <h1>Active Listings</h1>
+    <ul>
+        {% for listing in listings %}
+            <li>
+                <h2>{{ listing.title }}</h2>
+                <p>{{ listing.description }}</p>
+                {% if listing.image %}
+                    <img src="{{ listing.image.url }}" alt="{{ listing.title }}">
+                {% endif %}
+                <p>Current Price: ${{ listing.current_price }}</p>
+                <a href="{% url 'listing' listing.id %}">View Listing</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

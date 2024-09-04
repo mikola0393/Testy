@@ -1,0 +1,99 @@
+{% extends "auctions/base.html" %}
+{% load currency %}
+
+{% block body %}
+    <h2>{{ listing.title }}</h2>
+
+    
+    {% if messages %}
+        <div>
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <div class="watchlist-container">
+            {% if in_watchlist %}
+                <form action="{% url 'remove_from_watchlist' listing.id %}" method="post" class="watchlist-button-form">
+                    {% csrf_token %}
+                    <button type="submit" class="watchlist-button-custom">Remove from Watchlist</button>
+                </form>
+            {% else %}
+                <form action="{% url 'add_to_watchlist' listing.id %}" method="post" class="watchlist-button-form">
+                    {% csrf_token %}
+                    <button type="submit" class="watchlist-button-custom">Add to Watchlist</button>
+                </form>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <div class="image-container">
+        {% if listing.image %}
+            <img src="{{ listing.image.url }}" alt="{{ listing.title }}" class="listing-image">
+        {% endif %}
+    </div>
+
+    <p>{{ listing.description }}</p>
+
+    <p><strong>Price:</strong> {{ listing.current_price|currency }}</p>
+    <p><strong>Starting Bid:</strong> {{ listing.starting_bid|currency }}</p>
+    <p><strong>Created:</strong> {{ listing.created_at|date:"M d, Y H:i" }}</p>
+
+    <p><strong>Number of users who added this to Watchlist:</strong> {{ listing.watchlisted_by.count }}</p>
+
+    {% if user.is_authenticated %}
+        {% if listing.is_active %}
+            <form action="{% url 'place_bid' listing.id %}" method="post">
+                {% csrf_token %}
+                {{ bid_form.as_p }}
+                <button type="submit" class="place-bid-button">Place Bid</button>
+            </form>
+        {% else %}
+            <p><em>This auction is closed.</em></p>
+            {% if user_won_auction %}
+                <p><strong>Congratulations! You won this auction.</strong></p>
+            {% endif %}
+        {% endif %}
+        
+        {% if user == listing.created_by and listing.is_active %}
+            <form action="{% url 'close_auction' listing.id %}" method="post" class="close-auction-form" style="margin-top: 15px;">
+                {% csrf_token %}
+                <button type="submit" class="place-bid-button">Close Auction</button>
+            </form>
+        {% endif %}
+
+        <form action="{% url 'add_comment' listing.id %}" method="post" style="margin-top: 15px;">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="place-bid-button">Add Comment</button>
+        </form>
+    {% endif %}
+
+    {% if bids %}
+        <h3>Bids</h3>
+        <ul>
+            {% for bid in bids %}
+                <li>{{ bid.amount|currency }} by {{ bid.user.username }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No bids yet.</p>
+    {% endif %}
+
+    {% if comments %}
+        <h3>Comments</h3>
+        <ul>
+            {% for comment in comments %}
+                <li class="comment-container">
+                    <div class="comment-header">{{ comment.user.username }} at {{ comment.timestamp|date:"M d, Y H:i" }}</div>
+                    <div>{{ comment.content }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No comments yet.</p>
+    {% endif %}
+
+{% endblock %}

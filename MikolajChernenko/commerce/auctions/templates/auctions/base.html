@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auctions</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Auctions</h1>
+    <nav>
+        {% if user.is_authenticated %}
+            <p>Signed in as {{ user.username }}.</p>
+            <a href="{% url 'index' %}">Active Listings</a>
+            <a href="{% url 'categories' %}">Categories</a>
+            <a href="{% url 'watchlist' %}">Watchlist <span class="watchlist-count">{{ watchlist_count }}</span></a> <!-- Dodano klasę -->
+            <a href="{% url 'create_listing' %}">Create Listing</a>
+            <a href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </nav>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
